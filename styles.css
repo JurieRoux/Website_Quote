@@ -57,6 +57,7 @@ nav ul li a.active {
 .tab-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
+    text-align: center; /* Center the content */
 }
 
 .tab-content.active {
@@ -79,6 +80,9 @@ nav ul li a.active {
     border-radius: 5px;
     transition: background-color 0.3s;
     border: 1px solid #6ecf68; /* Light green border for service items */
+    text-align: left;
+    max-width: 600px;
+    margin: 10px auto; /* Center the service items */
 }
 
 .service label {
@@ -115,6 +119,12 @@ nav ul li a.active {
 
     .service {
         padding: 15px;
+        text-align: center;
+    }
+
+    .service label {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -125,7 +135,7 @@ nav ul li a.active {
 
     .service label {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .total {
