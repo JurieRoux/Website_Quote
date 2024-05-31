@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalOneTime = document.getElementById('total-one-time');
     const totalMonthly = document.getElementById('total-monthly');
     const totalHourly = document.getElementById('total-hourly');
+    const complexitySlider = document.getElementById('complexity-slider');
+    const complexityPrice = document.getElementById('complexity-price');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', function (event) {
@@ -38,6 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     hourlyCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => calculateTotal(hourlyCheckboxes, totalHourly));
+    });
+
+    complexitySlider.addEventListener('input', function () {
+        complexityPrice.textContent = complexitySlider.value;
+        calculateTotal(checkboxes, totalOneTime);
     });
 
     // Set initial tab
