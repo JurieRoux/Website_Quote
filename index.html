@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Store for Services</h1>
+        <nav>
+            <ul>
+                <li><a href="#one-time">One-Time Costs</a></li>
+                <li><a href="#monthly">Monthly Costs</a></li>
+                <li><a href="#hourly">Hourly Rates</a></li>
+            </ul>
+        </nav>
+
+        <div id="one-time" class="tab-content">
+            <h2>One-Time Costs</h2>
+            <div class="service">
+                <label for="complexity-slider">
+                    Level of Complexity (R2000 to R6000): R<span id="complexity-price">2000</span>
+                </label>
+                <input type="range" id="complexity-slider" min="2000" max="6000" step="100" value="2000">
+            </div>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="service-checkbox" data-price="15000">
+                    <span>eCommerce Web Development - R15,000 to R30,000 (Depending on spec)</span>
+                </label>
+            </div>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="service-checkbox" data-price="1500">
+                    <span>Logo Design - R1500</span>
+                </label>
+            </div>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="service-checkbox" data-price="2500">
+                    <span>Content Creation (All the writing / wording for website) - R2500</span>
+                </label>
+            </div>
+            <div class="total">
+                Total One-Time Cost: R<span id="total-one-time">0</span>
+            </div>
+        </div>
+
+        <div id="monthly" class="tab-content">
+            <h2>Monthly Costs</h2>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="monthly-checkbox" data-price="200">
+                    <span>Hosting and Maintenance: R200 per month</span>
+                </label>
+            </div>
+            <div class="total">
+                Total Monthly Cost: R<span id="total-monthly">0</span>
+            </div>
+        </div>
+
+        <div id="hourly" class="tab-content">
+            <h2>Hourly Rates</h2>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="hourly-checkbox" data-price="300">
+                    <span>Cost per hour for changes: R300</span>
+                </label>
+            </div>
+            <div class="service">
+                <label>
+                    <input type="checkbox" class="hourly-checkbox" data-price="250">
+                    <span>Social Media Marketing Content - R250 per post material</span>
+                </label>
+            </div>
+            <div class="total">
+                Total Hourly Cost: R<span id="total-hourly">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
