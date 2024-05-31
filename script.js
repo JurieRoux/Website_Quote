@@ -20,31 +20,47 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const calculateTotal = (checkboxes, totalElement) => {
-        let total = 0;
+    const calculateTotal = () => {
+        let total = parseFloat(complexitySlider.value);
         checkboxes.forEach(cb => {
             if (cb.checked) {
                 total += parseFloat(cb.getAttribute('data-price'));
             }
         });
-        totalElement.textContent = total.toFixed(2);
+        totalOneTime.textContent = total.toFixed(2);
     };
 
     checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => calculateTotal(checkboxes, totalOneTime));
+        checkbox.addEventListener('change', calculateTotal);
     });
 
     monthlyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => calculateTotal(monthlyCheckboxes, totalMonthly));
+        checkbox.addEventListener('change', () => {
+            let total = 0;
+            monthlyCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    total += parseFloat(cb.getAttribute('data-price'));
+                }
+            });
+            totalMonthly.textContent = total.toFixed(2);
+        });
     });
 
     hourlyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => calculateTotal(hourlyCheckboxes, totalHourly));
+        checkbox.addEventListener('change', () => {
+            let total = 0;
+            hourlyCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    total += parseFloat(cb.getAttribute('data-price'));
+                }
+            });
+            totalHourly.textContent = total.toFixed(2);
+        });
     });
 
     complexitySlider.addEventListener('input', function () {
         complexityPrice.textContent = complexitySlider.value;
-        calculateTotal(checkboxes, totalOneTime);
+        calculateTotal();
     });
 
     // Set initial tab
