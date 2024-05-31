@@ -20,10 +20,10 @@
         <div id="one-time" class="tab-content">
             <h2>One-Time Costs</h2>
             <div class="service">
-                <label>
-                    <input type="checkbox" class="service-checkbox" data-price="3000">
-                    <span>Dynamic Web Development - R2000 to R6000 (Probably R3000)</span>
+                <label for="complexity-slider">
+                    Level of Complexity (R2000 to R6000): R<span id="complexity-price">2000</span>
                 </label>
+                <input type="range" id="complexity-slider" min="2000" max="6000" step="100" value="2000">
             </div>
             <div class="service">
                 <label>
@@ -52,8 +52,8 @@
             <h2>Monthly Costs</h2>
             <div class="service">
                 <label>
-                    <input type="checkbox" class="monthly-checkbox" data-price="150">
-                    <span>Hosting and Maintenance: R150 per month</span>
+                    <input type="checkbox" class="monthly-checkbox" data-price="200">
+                    <span>Hosting and Maintenance: R200 per month</span>
                 </label>
             </div>
             <div class="total">
